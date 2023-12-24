@@ -1,0 +1,1 @@
+I ran "sudo kill -9 pid" after i found the pid (by using 'pgrep antivirus')

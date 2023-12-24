@@ -1,0 +1,14 @@
+The code is almost identical to that of q2 except for a small number of changes.
+
+Get the address in GOT of check_if_virus:
+objdump -D ./binaries/antivirus -M intel --section=.plt | grep check_if_virus
+=> CHECK_IF_VIRUS_GOT = 0x08049080
+
+Because 'check_if_virus' gets only one argument (char*) I had to find other function 
+with the same signature that will always return 0.
+I found that 'check_if_live_patch' as perfect replacement becuse it always return 0 
+and also gets only one argument (char*) as well.
+
+As before i used:
+objdump -D ./binaries/antivirus -M intel --section=.plt | grep check_if_live_patch
+=> CHECK_IF_VIRUS_ALTERNATIVE = 0x08049030

@@ -1,0 +1,15 @@
+The C code:
+- Fork - Make the malware stop waiting for our output by forking a child process
+- Attach to antivirus process
+- Wait
+- Infinite while loop:
+1) catch all the system calls
+2) check if it is a read syscall: 
+     a)  if it's not - continue, 
+     b) else puts -1 in the eax register 
+	(the prosses thinks the read syscall has failed).
+3) let the syscall finish
+4) Wait for the next syscall
+
+
+

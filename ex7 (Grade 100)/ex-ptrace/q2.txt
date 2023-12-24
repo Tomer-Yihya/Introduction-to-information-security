@@ -1,0 +1,13 @@
+Get the address of check_if_virus address:
+gdb ./antivirus -> break main -> return -> p check_if_virus 
+=> CHECK_IF_VIRUS_CODE '0xb7fc82a3'
+
+q2.c Implementation:
+Attach to the antivirus process (by pid), 
+overwrite with ptrace the "check_if_virus" with the assembly code: 'XOR EAX, EAX; RET' 
+and finally detach from antivirus process
+
+q2.py Implementation:
+Read template, 
+found the pid and check_if_virus address placeholders, 
+replace them with actual values and return the payload
