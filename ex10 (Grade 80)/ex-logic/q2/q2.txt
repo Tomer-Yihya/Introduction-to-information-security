@@ -1,0 +1,7 @@
+I use the site:
+https://davidhamann.de/2020/04/05/exploiting-python-pickle/
+
+First I difine the the class echo_hacked with the reduce method.  
+Now we gave the control to the pickle procees and create a new class
+(with reduce) that returning a o.system tupple (with 'echo hacked'). 
+Finally when we pickle a exploit class instance it will run the command we want.

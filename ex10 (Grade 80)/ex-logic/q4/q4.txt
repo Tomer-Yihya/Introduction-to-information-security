@@ -1,0 +1,11 @@
+I just send a string with 2 commands keys and get different behaviors for Alice and for Bob.
+
+The differens  is:
+1) Alice:
+Alice using json.load(), she only get the second command key ('echo cool'), 
+in this case we know the signature, and after sending it we will pass Alice test.
+
+2) Bob:
+Bob doesn't use json.load(), he reads the file and looks for command, 
+he find the first command ('echo hacked') and excute it (because we alredy passed Alice test).
+

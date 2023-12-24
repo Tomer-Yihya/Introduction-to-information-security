@@ -1,0 +1,12 @@
+The vulnerability is that there is a gap between "time of check to time of use" of the signature. 
+
+Alice reads the original file and validate it, right after that we change it to our command. 
+now when Bob reads the file it contains our command (with Alice approval)
+
+
+The Algiritham:
+- Creating a proper file that passes the test
+- executing run.py with the file who passes the test
+- Wait 2 seconds for Alice to read the file we created
+- Change the file to the malicious file
+- Wait (25 seconds) until run.py will finish running

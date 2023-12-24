@@ -1,0 +1,11 @@
+I make the function generate_exploit return '::cmd' Which means: 
+- username_end=0 
+- password_end=1.
+
+it will cause:
+1) user[:username_end] = user[0:0] = '' 
+2) user[username_end+1:password_end] = user[1:1] = ''
+3) data[:username_end] = data[0,0] = '' 
+4) data[username_end+1:password_end] = data[1:1] = ''
+
+This will cause the username and password checks to pass and then our command will run.
