@@ -1,0 +1,2 @@
+The vulnrability is that the program doesn't check the password length so we can give it a really long one
+that will cause a bufferoverflow in strcat. This will overwrite important data that will cause the program to crash.

@@ -1,0 +1,5 @@
+First we check if the plain text isn't empty (we dont want divide by zero),
+if it is then the score is 0, then we count how much chars in the plain text are English chars and spaces
+or different characters or numbers and give them different value,
+this sum we divided by the total length of the plain text,
+that way we get the precentage of the "Englishness" of the plain text

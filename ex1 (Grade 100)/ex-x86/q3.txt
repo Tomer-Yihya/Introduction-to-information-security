@@ -1,0 +1,42 @@
+
+the code key idea:
+This code gets as an input of two strings and concatenates them.
+
+_LABEL1 code:
+get the EDI pointer to the end of the string (like while loop) 
+
+_LABEL2 code:
+copy byte from ESI to EDI until copy all the source string
+
+
+
+
+the code with notes:
+
+   XOR EDX, EDX     # EDX = 0
+_LABEL1:
+   CMP [EDI], DL    # cheak if the pointer point to nothing
+   JZ  _LABEL2      # if it does go to _LABEL2
+   INC EDI          # promote the pointer by 1
+   JMP _LABAL1      # go to _LABEL1
+
+_LABEL2
+   MOV AL, [ESI]    # copy byte from source to AL
+   MOV [EDI], AL    # copy byte from AL to destination next place
+   INC ESI          # promote the ESI pointer by 1
+   INC EDI          # promote the EDI pointer by 1
+   CMP AL, DL       
+   JNZ _LABEL2      # IF(AL != DL) go to LABEL2
+
+_END:
+
+registers:
+AL - 8 bits register
+DL - 8 bits register
+ESI - is for source (POINTER)
+EDI - is for destination (POINTER)
+
+
+
+
+

@@ -1,0 +1,9 @@
+First we convert the bytes to bytearray because bytes is immutable
+then we replace the bytes in offset 1757 - 1761 in the bytes
+\xb8\x00\x00\x00\x00
+in 1757-1761 bytes by ida
+is the 'mov eax, 1' instruction in the invalid code block, what this code
+does it "put" b'\xb8\x00\x00\x00\x00' instead of 'mov eax, 1',
+this is the opcode for 'mov eax, 0' instruction, so now the program
+will always return 0 after the valid function, regardless the validation of the message. 
+The printing still unchanged

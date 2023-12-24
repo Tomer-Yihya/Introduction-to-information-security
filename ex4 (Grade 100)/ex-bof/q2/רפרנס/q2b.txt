@@ -1,0 +1,15 @@
+Step 1:
+In the core file I saw that the seg fault was at 0x72727271 in check_password().
+
+Step 2:
+Using "info registers" I figured out it is the value of EIP.
+
+Step 3:
+Using "x/48x ($esp - 130)"  -
+Buffer start (X) = 0xbfffdff9
+Address we want to change (A) = 0xbfffe03c
+Offset (Y) = 67
+
+In python:
+Created the password from the shellcode bytes + padding to Y + X 
+Ran the sudo program with the password and a random command(ls)

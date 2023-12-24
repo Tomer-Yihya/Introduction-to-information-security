@@ -1,0 +1,10 @@
+Let us mark the number in the first byte of the file as n then 
+msgcheck is checking if the xor of the third byte with the constant 0x72 then
+it's xor the fourth byte with the previous result, and so on,
+it does so n times. at the end we check if the final result is 
+equal the second byte, if so the file is valid, else is invalid.
+We doing the same logic in the python code, first we check if the file contain more than one
+byte, if it's not then there is no second byte and the file is invalid, we return false, else 
+we read the first byte and convert it to int, then we run from the third byte leni times (where leni it's the first byte)
+and xor the result with the current byte, at the end we return 
+True iff the result equal the second byte

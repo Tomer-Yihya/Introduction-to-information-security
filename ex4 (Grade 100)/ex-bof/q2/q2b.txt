@@ -1,0 +1,13 @@
+First I ran the command "python3 q2a.py" which causes the core to be dumped and the creation of the core file (the asm file is empty).
+Then by running the commands:
+- "sudo ./q2a.py core"
+- "info registers"
+- "x/28x ($esp -84)" (to find out the beginning of the array)
+- "x/28x ($esp -64)" (to find out the place of the crash)
+We discovered that the crash occurred when we read the value 0x68676767 located at address 0xbffffdfc 
+i.e. this is the return address (which we will overwrite later).
+We also found that the beginning of the buffer is at address 0xbffffdfb9.
+Now we can know the size of the array by subtracting the addresses (0xbffffdfc-0xbffffdfb9 = 0x43 = 67).
+
+In the Python file we simply copied the contents of the asm file and after that we filled in nops 
+until we get to the return address where we wrote the address for the beginning of the array.

@@ -1,0 +1,4 @@
+The vulnerability is that there is no password length check.
+If we give a password that is too long, we will cause a buffer over flow 
+that will crash the program because of the data overwrite
+I send: password = "aaaaaaaabbbbbbbbccccccccdddddddd...xxxxxxxxyyyyyyyyzzzzzzzz" 

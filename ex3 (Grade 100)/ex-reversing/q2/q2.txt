@@ -1,0 +1,15 @@
+in patch1.asm it's the area with the small dead zone, so
+from it we want to jump to the big one where we inject our
+code
+
+in patch2.asm this is our injected code, we check if the string 
+start with "#!", if so we call system then jump to the instruction
+after printf in the original binary, if not we jump right after the
+small patch, meaning doing printf.
+
+in q2.py we inject our code to the binary, we doing so by first
+get the binary from our asm code, then we start to inject the big
+code to the original binary from byte 1485, where the big dead
+zone start, then we inject our small code from byte 1587 where
+the small dead zone start. at the end we return the binary
+with the injected code 

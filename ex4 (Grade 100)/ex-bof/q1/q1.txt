@@ -1,0 +1,7 @@
+As we saw in the recitation, the function saves the array on the stack 
+with the address arr[0] at the lowest address and arr[leng-1] at the highest.
+We also saw that immediately after saving the array variables, we store the int variables.
+in our case the 'auth' variable is saved immediately after the array.
+There for the weakness is that the last character we send overrides 'auth' in the stack, 
+so if we write in the last place the character from place [1] we will get that the condition will always be true (auth == 1) 
+regardless of whether the password is correct or not

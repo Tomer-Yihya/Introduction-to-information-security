@@ -1,0 +1,4 @@
+The idea of fixing in this function is: we XOR the data[0] bytes from the third byte
+then check if it equal to the second byte i.e. data[1]. so the idea is to check
+what is the result of the XOR and that result write as the second byye, that
+way we only change one byte at the file and still making the msgcheck code return 0 i.e. valid file

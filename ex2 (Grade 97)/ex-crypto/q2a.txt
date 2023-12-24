@@ -1,0 +1,4 @@
+We doing brute force algorithm, there are 10,000 options to PIN number
+so we try them all by encrypt the i'th pin and then check if the encryption is equal the argument we got, if so this is our PIN
+and we return it, else we continue to the next optional PIN number,
+if we don't find anyone then we return -1 that represent an error

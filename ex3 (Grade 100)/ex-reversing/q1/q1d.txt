@@ -1,0 +1,6 @@
+First we convert the bytes to bytearray because bytes is immutable
+then we replace the 1739 byte in 0xEB value, by ida in the 1739 byte there is
+the 'jnz' instruction after the validate function, what this code does it
+"put" the value 0xEB instead of jnz,
+0xEB is the opcode for 'j' instruction, so no matter the cmp result we always
+follow the valid code branch 

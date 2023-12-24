@@ -1,0 +1,4 @@
+We check for all posiable keys (which is 2^(8*key_length)) if they can be the possiable key, we doing so by first generating them
+from i in the while block, then we try to decrypt the cipher text with that key, if the score of the decrypted plain text is higher
+than the current maximum, then he is the new maximum :)
+at the end we return the plain text that his score was the biggest

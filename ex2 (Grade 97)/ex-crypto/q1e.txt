@@ -1,0 +1,12 @@
+Note: in this function we use a auxiliary function break_byte, it's documented inside the code, but here is part of it's documentation:
+This function use brute force method but on single byte, meaning we have only 256 possiable value
+        to the fitting key
+        
+        lst_cipher - list of the bytes of the cipher that are XOR with the i'th byte in the key
+        @ret - return the key value that maximize the score on the given lst_cipher
+        
+        
+now to our smarter_break function
+We first make break_key that is list of lists in size key_length, then we pass through all the cipher text and insert each byte of the
+cipher text to the right break_key cell, then we go through all lists in break_key and each list send to break_byte function,
+that way we slowly but surely buildour key, we build it byte after byte, at the end we decrypt the cipher text using the key we made.

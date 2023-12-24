@@ -1,0 +1,4 @@
+all possiable credit card number power 3 are smaller than n, so we need third root to get
+back the real credit card number, as num^3 % n == num^3
+we do ceil because sometimes we can get close value but 
+not the same, because of how the computer save data we lose small amount of data while calculating the third root

@@ -1,0 +1,4 @@
+The vulnerability is that the last character in the password we give is overflowing
+to 'auth'. 
+So if we make sure the last character is chr(1) then auth=1 and we will always return True
+regardless if the password is really correct or not.
