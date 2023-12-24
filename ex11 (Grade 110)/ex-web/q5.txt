@@ -1,0 +1,3 @@
+The vulnerability is that we can get the site's cookies from an HTML page.
+
+When we send a POST request we get the current cookie and can use it to actually post our message.

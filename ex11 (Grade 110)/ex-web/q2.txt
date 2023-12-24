@@ -1,0 +1,4 @@
+The vulnerability is that the '/join' option does not check the script tag.
+
+That is why it is possible to add a new channel whose name will be our script and then every time the channels are loaded the script will run.
+By loading channels, a situation is created where the script runs regardless of which channel the user is on at any given moment.

@@ -1,0 +1,4 @@
+The vulnerability is that we can add an "upload" function.
+
+A message is sent to the #general-spam channel with an image tag when the image has an "onload" function that checks a local storage variable.
+First the variable is NULL and from the next attempt onwards the image is defined as hidden.

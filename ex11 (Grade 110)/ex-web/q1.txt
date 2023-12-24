@@ -1,0 +1,5 @@
+The vulnerability is that we can tell what the cookie will be.
+
+During a successful login we will simply set the cookie to be an encoding of the username - "edwrd".
+After we have set the cookie, there is a link back to the login page which will cause login verification and we will be able to browse the site.
+In our case we can simply change the cookie file to "edward" coding and then after refreshing it will see the correct cookie and we can browse the site as well.
