@@ -1,0 +1,9 @@
+This very similar to q1b, with some changes:
+
+Password composition:
+- 120 bytes of the character 'a' to fill the buffers
+- 15 bytes of the character 'b' (up to the return address)
+- the address of system    (0xb7b4f040)
+- the address of exit      (0xb7b41990)
+- the address of '/bin/sh' (0xb7b270f0)
+- the value 0x42

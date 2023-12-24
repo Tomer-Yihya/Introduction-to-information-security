@@ -1,0 +1,9 @@
+After finding the starting address of the buffer we discovered that:
+start of buffer = 0xbfffdfaa
+
+Password composition:
+- 120 bytes of the character 'a' to fill the buffers
+- 15 bytes of the character 'b' (up to the return address)
+- the address of system         (0xb7b4f040)
+- 4 bytes of the character 'b'
+- the address '/bin/sh'.        (0xb7b270f0)

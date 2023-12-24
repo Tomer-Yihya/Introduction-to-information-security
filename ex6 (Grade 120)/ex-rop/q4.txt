@@ -1,0 +1,11 @@
+I followed the instructions so the password composition is:
+- 135 bytes of the character 'b' to fill the buffers	 (fill the buffers)
+- POP EBP         		        		 (part of "puts into EBP")
+- PUTS address	  		        		 (part of "puts into EBP")
+- PUTS address	  		         		 ("jump to puts")
+- ADD ESP, 4	  		        		 ("skip 4 bytes")
+- string address (string = 'Take me...')		 (the "string address")
+- POP ESP         		        		 (part of "jump to puts")
+- PUTS address						     (part of "jump to puts")
+- "POP EBP" address					     (part of "jump to puts")
+- the string 'Take me..' in bytes	 

@@ -1,0 +1,7 @@
+The vulnerability is that the program does not check the length of the password.
+Sending a password long enough will cause a crash.
+
+I found the return address by:
+- filled the buffers with the character 'a'
+- added the character 'b' (each time I placed a different number)
+- added 4 bytes of the character 'c' 

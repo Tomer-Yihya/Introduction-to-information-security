@@ -1,0 +1,8 @@
+I create the password with
+Password composition:
+- POP EAX 
+- store 0x0001
+- POP EDX 
+- store AUTH address
+- MOV dword ptr [EDX], EAX
+- store the address after check_password return
