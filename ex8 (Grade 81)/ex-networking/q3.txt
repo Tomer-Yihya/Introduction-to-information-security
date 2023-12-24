@@ -1,0 +1,20 @@
+is_packet_to_original_gateway:
+check three boolean:
+check if paket mac belong to the router
+check if paket ip not belong to me
+check if paket mac not belong to me
+only if all three are true we return true.
+
+is_stolen_packet:
+check two boolean:
+1) Destination MAC is our MAC
+2) Destination IP is not our IP
+only if both of them are true we return true.
+
+create_poison:
+we set the values as:
+2 - tell the target machine our info
+hwsrc - the mac address to send is our mac address
+psrc - the ip address to send to is the router ip
+hwdst - the target mechine detiles (mac)
+pdst - the target mechine detiles (ip)

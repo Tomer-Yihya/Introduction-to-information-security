@@ -1,0 +1,9 @@
+parse_packet:
+after we checked that this is a TCP packet we can get its payload as a string, parse it and get only the path part we need.
+only If WEBSITE is in the payload we continue.
+Finally we Extract the username and password.
+If irrelevant packet arrived we just return None as we were asked.
+
+
+packet_filter:
+we filter only TCP packets and port 80 which is the HTTP port.

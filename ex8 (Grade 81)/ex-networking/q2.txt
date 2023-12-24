@@ -1,0 +1,8 @@
+When arrived an HTTP packet we check if its contain: "Host: infosec.cs.tau.ac.il" 
+to detect a login attempt to the site.
+If it is login attempt we inject our packet and otherwise we return 0.
+
+Injected packet:
+in the IP layer we switch the destination and source IPs from the packet we sniffed. 
+in the TCP layer we switch the destination and source ports of the sniffed packet and sets the flags as AF (send an ACK and close the connection). 
+I also set seq and ack to the required values and the Data filed was given.
