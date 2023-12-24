@@ -1,0 +1,3 @@
+The vulnrability is that the message can hold up to 2^32-1 bytes 
+which is much bigger then the buffer who can only hold up to 1024 bytes.
+if we will try to read a message longer then 1024 bytes it will cause a buffer overflow. 

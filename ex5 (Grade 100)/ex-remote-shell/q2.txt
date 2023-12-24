@@ -1,0 +1,10 @@
+python:
+I used q1.py and the gdb debuger to find the buffer start and end address, EIP address and all the functions address.
+After that i can calculate the buffer size (1024), the offset from the buffer to the return address(16) and the total size (1040).
+I added a nops to (1040 - shellcode size) bytes long and overwrite the EIP register with the buffer start address and the shellcode.
+
+assembly:
+- Create a socket
+- Connect it to IP address 127.0.0.1 and port 1337.
+- Redirects MYSOCKET file descriptors of STDIN, STDOUT, STDERR by useing dup2.
+- create a shell by run execv with paht and NULL arguments. 

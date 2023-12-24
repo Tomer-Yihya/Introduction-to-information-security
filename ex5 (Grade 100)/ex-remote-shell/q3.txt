@@ -1,0 +1,20 @@
+encode func: 
+for every byte we check if it's valid ASCII (<=0x80), 
+every byte that it's ASCII is not valid we xor it with mask (0xFF) 
+otherwise the byte left unchange.
+
+get_decoder_code func:
+i xored each indices byte with 0xff.
+then i calculate the distance form the last index and the number of times 
+we increased ecx in order to get the offset difference.
+
+
+get_ascii shellcode func: 
+i used the method "PUSH and POP" in order to found the right address. 
+then i subtract shellcode_length + 4 from EAX to get the start byte of the shellcode.
+and finally i use encode and get_decoder_code functions.
+
+
+get_payload func:
+same as q2 but this time i fill the slide with x67 (CMP) insted of x90 (NOP). 
+because NOP ASCII value is x90 which is not valid ASCII.
