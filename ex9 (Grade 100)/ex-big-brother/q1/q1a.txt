@@ -1,0 +1,23 @@
+The function generate_syn_packets:
+Created packets with the destination IP as the input IP and dport as the input ports.
+
+The function analyze_scan:
+If packet is unanswered then we filter it.
+If the packet is getting an answer, I check If flags == 'SA' 
+if so it's mean that it is open (else it is closed).
+    
+Why is this called a stealth SYN scan:
+- "stealth" because it is designed to be discreet and avoid detection by firewall systems.
+- "SYN" is short for "synchronize." It is a flag used in the three-way handshake process in the TCP communication protocol.
+- "Scan" is in the context of network security, a scan refers to the act of network to gather information about open ports, 
+services, and potential vulnerabilities.
+
+combined, "stealth SYN scan" refers to a scanning technique that sends SYN packets to specific ports 
+on a target system without completing the full three-way handshake process. 
+Instead of sending the final ACK packet to establish a connection, 
+the scanning tool immediately terminates the connection after receiving the SYN-ACK response from the target system.
+
+The purpose of this technique is to determine if a port is open (listening) or closed (not listening) 
+without arousing suspicion or triggering security measures. 
+By not completing the handshake, the scanning tool avoids creating a full connection, 
+which could be logged by intrusion detection systems or firewall rules, potentially alerting the system administrators or triggering countermeasures.

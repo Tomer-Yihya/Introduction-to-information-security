@@ -1,0 +1,4 @@
+The vulnrability of this firewall is that we have a specifin sliding time window. 
+The firewall blocks some IP only if it's sends 15 SYN packets in a 60sec time window. 
+An a potitional attacker can add delay between the packets so it will send in 
+less then 15 SYN packets a minute so he could keep sending SYN packets forever and never get blocked.

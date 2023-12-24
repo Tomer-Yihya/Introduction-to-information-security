@@ -1,0 +1,11 @@
+Winston:
+- Create cipher
+- Create padder
+- Padd the msg (with PKCS7)
+- Encrypt the padded msg 
+
+Julia:
+- Create cipher
+- Create unpadder
+- Decrypt the msg
+- Unpadd the msg

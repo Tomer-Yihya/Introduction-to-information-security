@@ -1,0 +1,17 @@
+Winston:
+- First I calcuate how many bits long is the original msg.
+- Then I padd with '\0\0'. This will add 16 zeroes so the new reminder will be 0 
+and also it won't affect the original msg.
+(Now the msg is a multiple of 3 bits).
+- Then I do "msg AND 7" (AND with 111) and shift (right) our msg 3 bits.
+(To get each triplet).
+- Finally I create the SA packet with the 3 bits in reserved and send it.
+
+
+Julia:
+- initilize defult packet in case we didn't get any packets.
+- initilize triplets = -1.
+- Sniffs all packets.
+- Checks if they are TCP packets with sport=6500 and dport=1984.
+- For every packet we got based on the seq value we add it to packets_from_winston.
+- when got all the pacets I reassemble the msg.

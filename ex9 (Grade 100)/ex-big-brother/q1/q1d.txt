@@ -1,0 +1,2 @@
+For each packet I made sure that it was a TCP packet and also that it was a SYN packet.
+I then created a fake SYN-ACK packet to send back

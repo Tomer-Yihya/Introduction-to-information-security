@@ -1,0 +1,2 @@
+I check if it is a TCP packet and if it contains "LOVE"
+If it is I adds the IP to the set

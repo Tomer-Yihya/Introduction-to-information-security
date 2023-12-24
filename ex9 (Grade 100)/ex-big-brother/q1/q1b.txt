@@ -1,0 +1,11 @@
+generate_block_command:
+return "sudo iptables -A INPUT -s <IP_ADDRESS> -j DROP"
+
+on_packet:
+- Save the timestamp.
+- Check if it is a TCP packet.
+- Then heck if the IP is blocked (if so ignore it).
+- Add the timestamp to our dictionary.
+- Create new list and take from the IP timestamp list only the relenant. SYN packets, at the end 
+  we save the new list as the IP timestamp list.
+- finally check If we have 15 or more SYN packets, if so we block this IP.

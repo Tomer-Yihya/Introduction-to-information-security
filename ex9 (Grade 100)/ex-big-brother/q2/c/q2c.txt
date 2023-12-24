@@ -1,0 +1,3 @@
+If it is a TCP packet I got the payload, 
+then I calculate the Shannon entropy score, 
+and finally if "LOVE" is in it or the score is bigger than 3 (high_entropy) I add the IP to the set
